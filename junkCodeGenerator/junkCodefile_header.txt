@@ -1,0 +1,78 @@
+#ifndef OUTPUTFILE_H
+#define OUTPUTFILE_H
+#include<iostream>
+#include<string>
+
+namespace junkNamespace_9944 {
+	class junkClass_NxLYr4 {
+	private:
+		char *junkCharArr_NxLYr4;
+		int *junkInt_NxLYr4;
+		std::string iBkIK22;
+		float JaMvx88;
+		int CCDGI76;
+	public:
+		junkClass_NxLYr4(std::string& iBkIK22,float JaMvx88,int CCDGI76);
+		~junkClass_NxLYr4();
+		junkClass_NxLYr4(const NxLYr4& oldJunkObj);
+		junkClass_NxLYr4( NxLYr4&& rValue) : junkCharArr_NxLYr4(std::move(rValue.junkCharArr_NxLYr4)), junkInt_NxLYr4(std::move(rValue.junkInt_NxLYr4));
+		junkClass_NxLYr4& operator=(const NxLYr4& toCopyAssign);
+		junkClass_NxLYr4& operator=(NxLYr4&& toMove);
+		friend junkClass_NxLYr4 operator+(const junkClass_NxLYr4& term_1, const junkClass_NxLYr4& term_2);
+		string getString_iBkIK22();
+		float getFloat_JaMvx88();
+		int getInt_CCDGI76();
+		float 2_generateRandFloat_KIVMQ0();
+		int 1_generateRandInt_SnAwH0();
+	};
+}
+namespace junkNamespace_3403 {
+	class junkClass_xHFAb167 {
+	private:
+		char *junkCharArr_xHFAb167;
+		int *junkInt_xHFAb167;
+		std::string GeHGr235;
+		float IlgAG121;
+		int JsDZE52;
+	public:
+		junkClass_xHFAb167(std::string& GeHGr235,float IlgAG121,int JsDZE52);
+		~junkClass_xHFAb167();
+		junkClass_xHFAb167(const xHFAb167& oldJunkObj);
+		junkClass_xHFAb167( xHFAb167&& rValue) : junkCharArr_xHFAb167(std::move(rValue.junkCharArr_xHFAb167)), junkInt_xHFAb167(std::move(rValue.junkInt_xHFAb167));
+		junkClass_xHFAb167& operator=(const xHFAb167& toCopyAssign);
+		junkClass_xHFAb167& operator=(xHFAb167&& toMove);
+		friend junkClass_xHFAb167 operator+(const junkClass_xHFAb167& term_1, const junkClass_xHFAb167& term_2);
+		string getString_GeHGr235();
+		float getFloat_IlgAG121();
+		int getInt_JsDZE52();
+		float 2_generateRandFloat_eJvYc0();
+		int 1_generateRandInt_LCApT0();
+	};
+}
+namespace junkNamespace_5338 {
+	class junkClass_irfxB37 {
+	private:
+		char *junkCharArr_irfxB37;
+		int *junkInt_irfxB37;
+		std::string avErm169;
+		float YpbWj132;
+		int vmbvR21;
+	public:
+		junkClass_irfxB37(std::string& avErm169,float YpbWj132,int vmbvR21);
+		~junkClass_irfxB37();
+		junkClass_irfxB37(const irfxB37& oldJunkObj);
+		junkClass_irfxB37( irfxB37&& rValue) : junkCharArr_irfxB37(std::move(rValue.junkCharArr_irfxB37)), junkInt_irfxB37(std::move(rValue.junkInt_irfxB37));
+		junkClass_irfxB37& operator=(const irfxB37& toCopyAssign);
+		junkClass_irfxB37& operator=(irfxB37&& toMove);
+		friend junkClass_irfxB37 operator+(const junkClass_irfxB37& term_1, const junkClass_irfxB37& term_2);
+		string getString_avErm169();
+		float getFloat_YpbWj132();
+		int getInt_vmbvR21();
+		float 2_generateRandFloat_VbHJG0();
+		int 1_generateRandInt_jmupg0();
+	};
+}
+namespace junkNamespace_7996 {
+}
+
+#endif
