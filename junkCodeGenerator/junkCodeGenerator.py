@@ -261,6 +261,9 @@ if 0 < numClass <= 10:
         ######################################
         ##Define constructor and destructors##
         ######################################
+        #Explicit Constructor
+        if classConstructor == 'int ' or classConstructor == 'float ':
+            outputFile_Cpp.write('\texplicit ' +  
         #Constructor
         outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(' + classConstructor + ')')
         outputFile_Cpp.write(' : junkCharArr_' + randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)')
