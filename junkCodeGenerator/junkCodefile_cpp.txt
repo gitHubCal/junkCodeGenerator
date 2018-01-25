@@ -2,326 +2,333 @@
 #include<string>
 #include "outputFile.h"
 
-namespace junkNamespace_9944 {
-	junkClass_NxLYr4::junkClass_NxLYr4(std::string& iBkIK22,float JaMvx88,int CCDGI76) : junkCharArr_NxLYr4(new char[1024]), junkInt_NxLYr4(nullptr), iBkIK22(iBkIK22), JaMvx88(JaMvx88), CCDGI76(CCDGI76) { };
-	junkClass_NxLYr4::~junkClass_NxLYr4() {
-		delete[] junkCharArr_NxLYr4; junkCharArr_NxLYr4 = nullptr;
-		delete junkInt_NxLYr4; junkInt_NxLYr4 = nullptr;
+namespace junkNamespace_2186 {
+	junkClass_rIqfa204::junkClass_rIqfa204(std::string& GwBUY32,float bqgzp139,int YcdpU18) : junkCharArr_rIqfa204(new char[1024]), junkInt_rIqfa204(nullptr), GwBUY32(GwBUY32), bqgzp139(bqgzp139), YcdpU18(YcdpU18) { };
+	junkClass_rIqfa204::~junkClass_rIqfa204() {
+		delete[] junkCharArr_rIqfa204; junkCharArr_rIqfa204 = nullptr;
+		delete junkInt_rIqfa204; junkInt_rIqfa204 = nullptr;
 	}
-	junkClass_NxLYr4::junkClass_NxLYr4(const NxLYr4& oldJunkObj) {
-		junkInt_NxLYr4 = new int;
-		*junkInt_NxLYr4 = *oldJunkObj.junkInt_NxLYr4;
-		junkCharArr_NxLYr4 = new char[1024];
-		std::copy(junkCharArr_NxLYr4,  oldJunkObj.junkCharArr_NxLYr4);
-		iBkIK22 = oldJunkObj.iBkIK22;
-		JaMvx88 = oldJunkObj.JaMvx88;
-		CCDGI76 = oldJunkObj.CCDGI76;
+	junkClass_rIqfa204::junkClass_rIqfa204(const rIqfa204& oldJunkObj) {
+		junkInt_rIqfa204 = new int;
+		*junkInt_rIqfa204 = *oldJunkObj.junkInt_rIqfa204;
+		junkCharArr_rIqfa204 = new char[1024];
+		std::copy(junkCharArr_rIqfa204,  oldJunkObj.junkCharArr_rIqfa204);
+		GwBUY32 = oldJunkObj.GwBUY32;
+		bqgzp139 = oldJunkObj.bqgzp139;
+		YcdpU18 = oldJunkObj.YcdpU18;
 	}
-	junkClass_NxLYr4::junkClass_NxLYr4(NxLYr4&& rValue) : junkCharArr_NxLYr4(std::move(rValue.junkCharArr_NxLYr4)), junkInt_NxLYr4(std::move(rValue.junkInt_NxLYr4)), iBkIK22(std::move(rValue.iBkIK22), JaMvx88(std::move(rValue.JaMvx88), CCDGI76(std::move(rValue.CCDGI76) {}
-	junkClass_NxLYr4& junkClass_NxLYr4::operator=(const NxLYr4& toCopyAssign) {
-		std::swap(junkCharArr_NxLYr4,toCopyAssign.junkCharArr_NxLYr4);
-		std::swap(junkInt_NxLYr4,toCopyAssign.junkInt_NxLYr4);
-		std::swap(iBkIK22,toCopyAssign.iBkIK22);
-		std::swap(JaMvx88,toCopyAssign.JaMvx88);
-		std::swap(CCDGI76,toCopyAssign.CCDGI76);
+	junkClass_rIqfa204::junkClass_rIqfa204(rIqfa204&& rValue) : junkCharArr_rIqfa204(std::move(rValue.junkCharArr_rIqfa204)), junkInt_rIqfa204(std::move(rValue.junkInt_rIqfa204)), GwBUY32(std::move(rValue.GwBUY32), bqgzp139(std::move(rValue.bqgzp139), YcdpU18(std::move(rValue.YcdpU18) {}
+	junkClass_rIqfa204& junkClass_rIqfa204::operator=(const rIqfa204& toCopyAssign) {
+		std::swap(junkCharArr_rIqfa204,toCopyAssign.junkCharArr_rIqfa204);
+		std::swap(junkInt_rIqfa204,toCopyAssign.junkInt_rIqfa204);
+		std::swap(GwBUY32,toCopyAssign.GwBUY32);
+		std::swap(bqgzp139,toCopyAssign.bqgzp139);
+		std::swap(YcdpU18,toCopyAssign.YcdpU18);
 		return *this;
 	}
-	junkClass_NxLYr4& junkClass_NxLYr4::junkClass_NxLYr4& operator=(NxLYr4&& toMove) {
+	junkClass_rIqfa204& junkClass_rIqfa204::junkClass_rIqfa204& operator=(rIqfa204&& toMove) {
 		if(this != &toMove) {
-			delete junkCharArr_NxLYr4;
-			delete junkInt_NxLYr4;
-			junkCharArr_NxLYr4 = std::move(toMove.junkCharArr_NxLYr4);
-			junkInt_NxLYr4 = std::move(toMove.junkInt_NxLYr4);
-			iBkIK22 = std::move(toMove.iBkIK22);
-			JaMvx88 = std::move(toMove.JaMvx88);
-			CCDGI76 = std::move(toMove.CCDGI76);
+			delete junkCharArr_rIqfa204;
+			delete junkInt_rIqfa204;
+			junkCharArr_rIqfa204 = std::move(toMove.junkCharArr_rIqfa204);
+			junkInt_rIqfa204 = std::move(toMove.junkInt_rIqfa204);
+			GwBUY32 = std::move(toMove.GwBUY32);
+			bqgzp139 = std::move(toMove.bqgzp139);
+			YcdpU18 = std::move(toMove.YcdpU18);
 		}
 		return *this;
 	}
-	junkClass_NxLYr4 operator+(const NxLYr4& term_1, const NxLYr4& term_2) {
-		junkClass_NxLYr4 result = term_1;
-		result.junkInt_NxLYr4 = term_1.junkInt_NxLYr4 + term_2.junkInt_NxLYr4;
+	junkClass_rIqfa204 operator+(const rIqfa204& term_1, const rIqfa204& term_2) {
+		junkClass_rIqfa204 result = term_1;
+		result.junkInt_rIqfa204 = term_1.junkInt_rIqfa204 + term_2.junkInt_rIqfa204;
 		return result;
 	}
-	string junkClass_NxLYr4::getString_iBkIK22() {
-		return iBkIK22;
+	string junkClass_rIqfa204::getString_GwBUY32() {
+		return GwBUY32;
 	}
-	void junkClass_NxLYr4::setString_iBkIK22(const std::string& newStr) {
-		iBkIK22 = newStr;
+	void junkClass_rIqfa204::setString_GwBUY32(const std::string& newStr) {
+		GwBUY32 = newStr;
 	}
-	float junkClass_NxLYr4::getFloat_JaMvx88() {
-		return JaMvx88;
+	float junkClass_rIqfa204::getFloat_bqgzp139() {
+		return bqgzp139;
 	}
-	void junkClass_NxLYr4::setInt_JaMvx88(float newFloat) {
-		JaMvx88 = newFloat;
+	void junkClass_rIqfa204::setInt_bqgzp139(float newFloat) {
+		bqgzp139 = newFloat;
 	}
-	int junkClass_NxLYr4::getInt_CCDGI76() {
-		return CCDGI76;
+	int junkClass_rIqfa204::getInt_YcdpU18() {
+		return YcdpU18;
 	}
-	void junkClass_NxLYr4::setInt_CCDGI76(int newInt) {
-		CCDGI76 = newInt;
+	void junkClass_rIqfa204::setInt_YcdpU18(int newInt) {
+		YcdpU18 = newInt;
 	}
-	float junkClass_NxLYr4::2_generateRandString_KIVMQ0() {
-		for(int i = 0; i < 70; i++) {
+	float junkClass_rIqfa204::2_generateRandString_iXdEd0() {
+		for(int i = 0; i < 11; i++) {
 			continue;
 		}
-		float junkFloat_KIVMQ0 = 70.172;
-		return junkFloat_KIVMQ0;
+		float junkFloat_iXdEd0 = 11.123;
+		return junkFloat_iXdEd0;
 	}
-	int junkClass_NxLYr4::1_generateRandInt_SnAwH0() {
-		for(int i = 0; i < 70; i++) {
+	int junkClass_rIqfa204::1_generateRandInt_ZSlJZ0() {
+		for(int i = 0; i < 11; i++) {
 			continue;
 		}
-		int junkInt_SnAwH0 = 70;
-		return junkInt_SnAwH0;
+		int junkInt_ZSlJZ0 = 11;
+		return junkInt_ZSlJZ0;
 	}
 }
-namespace junkNamespace_3403 {
-	junkClass_xHFAb167::junkClass_xHFAb167(std::string& GeHGr235,float IlgAG121,int JsDZE52) : junkCharArr_xHFAb167(new char[1024]), junkInt_xHFAb167(nullptr), GeHGr235(GeHGr235), IlgAG121(IlgAG121), JsDZE52(JsDZE52) { };
-	junkClass_xHFAb167::~junkClass_xHFAb167() {
-		delete[] junkCharArr_xHFAb167; junkCharArr_xHFAb167 = nullptr;
-		delete junkInt_xHFAb167; junkInt_xHFAb167 = nullptr;
+namespace junkNamespace_4063 {
+	junkClass_GbKYx73::junkClass_GbKYx73(std::string& RFiJP11,float KPoij93,int rJmmh93) : junkCharArr_GbKYx73(new char[1024]), junkInt_GbKYx73(nullptr), RFiJP11(RFiJP11), KPoij93(KPoij93), rJmmh93(rJmmh93) { };
+	junkClass_GbKYx73::~junkClass_GbKYx73() {
+		delete[] junkCharArr_GbKYx73; junkCharArr_GbKYx73 = nullptr;
+		delete junkInt_GbKYx73; junkInt_GbKYx73 = nullptr;
 	}
-	junkClass_xHFAb167::junkClass_xHFAb167(const xHFAb167& oldJunkObj) {
-		junkInt_xHFAb167 = new int;
-		*junkInt_xHFAb167 = *oldJunkObj.junkInt_xHFAb167;
-		junkCharArr_xHFAb167 = new char[1024];
-		std::copy(junkCharArr_xHFAb167,  oldJunkObj.junkCharArr_xHFAb167);
-		GeHGr235 = oldJunkObj.GeHGr235;
-		IlgAG121 = oldJunkObj.IlgAG121;
-		JsDZE52 = oldJunkObj.JsDZE52;
+	junkClass_GbKYx73::junkClass_GbKYx73(const GbKYx73& oldJunkObj) {
+		junkInt_GbKYx73 = new int;
+		*junkInt_GbKYx73 = *oldJunkObj.junkInt_GbKYx73;
+		junkCharArr_GbKYx73 = new char[1024];
+		std::copy(junkCharArr_GbKYx73,  oldJunkObj.junkCharArr_GbKYx73);
+		RFiJP11 = oldJunkObj.RFiJP11;
+		KPoij93 = oldJunkObj.KPoij93;
+		rJmmh93 = oldJunkObj.rJmmh93;
 	}
-	junkClass_xHFAb167::junkClass_xHFAb167(xHFAb167&& rValue) : junkCharArr_xHFAb167(std::move(rValue.junkCharArr_xHFAb167)), junkInt_xHFAb167(std::move(rValue.junkInt_xHFAb167)), GeHGr235(std::move(rValue.GeHGr235), IlgAG121(std::move(rValue.IlgAG121), JsDZE52(std::move(rValue.JsDZE52) {}
-	junkClass_xHFAb167& junkClass_xHFAb167::operator=(const xHFAb167& toCopyAssign) {
-		std::swap(junkCharArr_xHFAb167,toCopyAssign.junkCharArr_xHFAb167);
-		std::swap(junkInt_xHFAb167,toCopyAssign.junkInt_xHFAb167);
-		std::swap(GeHGr235,toCopyAssign.GeHGr235);
-		std::swap(IlgAG121,toCopyAssign.IlgAG121);
-		std::swap(JsDZE52,toCopyAssign.JsDZE52);
+	junkClass_GbKYx73::junkClass_GbKYx73(GbKYx73&& rValue) : junkCharArr_GbKYx73(std::move(rValue.junkCharArr_GbKYx73)), junkInt_GbKYx73(std::move(rValue.junkInt_GbKYx73)), RFiJP11(std::move(rValue.RFiJP11), KPoij93(std::move(rValue.KPoij93), rJmmh93(std::move(rValue.rJmmh93) {}
+	junkClass_GbKYx73& junkClass_GbKYx73::operator=(const GbKYx73& toCopyAssign) {
+		std::swap(junkCharArr_GbKYx73,toCopyAssign.junkCharArr_GbKYx73);
+		std::swap(junkInt_GbKYx73,toCopyAssign.junkInt_GbKYx73);
+		std::swap(RFiJP11,toCopyAssign.RFiJP11);
+		std::swap(KPoij93,toCopyAssign.KPoij93);
+		std::swap(rJmmh93,toCopyAssign.rJmmh93);
 		return *this;
 	}
-	junkClass_xHFAb167& junkClass_xHFAb167::junkClass_xHFAb167& operator=(xHFAb167&& toMove) {
+	junkClass_GbKYx73& junkClass_GbKYx73::junkClass_GbKYx73& operator=(GbKYx73&& toMove) {
 		if(this != &toMove) {
-			delete junkCharArr_xHFAb167;
-			delete junkInt_xHFAb167;
-			junkCharArr_xHFAb167 = std::move(toMove.junkCharArr_xHFAb167);
-			junkInt_xHFAb167 = std::move(toMove.junkInt_xHFAb167);
-			GeHGr235 = std::move(toMove.GeHGr235);
-			IlgAG121 = std::move(toMove.IlgAG121);
-			JsDZE52 = std::move(toMove.JsDZE52);
+			delete junkCharArr_GbKYx73;
+			delete junkInt_GbKYx73;
+			junkCharArr_GbKYx73 = std::move(toMove.junkCharArr_GbKYx73);
+			junkInt_GbKYx73 = std::move(toMove.junkInt_GbKYx73);
+			RFiJP11 = std::move(toMove.RFiJP11);
+			KPoij93 = std::move(toMove.KPoij93);
+			rJmmh93 = std::move(toMove.rJmmh93);
 		}
 		return *this;
 	}
-	junkClass_xHFAb167 operator+(const xHFAb167& term_1, const xHFAb167& term_2) {
-		junkClass_xHFAb167 result = term_1;
-		result.junkInt_xHFAb167 = term_1.junkInt_xHFAb167 + term_2.junkInt_xHFAb167;
+	junkClass_GbKYx73 operator+(const GbKYx73& term_1, const GbKYx73& term_2) {
+		junkClass_GbKYx73 result = term_1;
+		result.junkInt_GbKYx73 = term_1.junkInt_GbKYx73 + term_2.junkInt_GbKYx73;
 		return result;
 	}
-	string junkClass_xHFAb167::getString_GeHGr235() {
-		return GeHGr235;
+	string junkClass_GbKYx73::getString_RFiJP11() {
+		return RFiJP11;
 	}
-	void junkClass_xHFAb167::setString_GeHGr235(const std::string& newStr) {
-		GeHGr235 = newStr;
+	void junkClass_GbKYx73::setString_RFiJP11(const std::string& newStr) {
+		RFiJP11 = newStr;
 	}
-	float junkClass_xHFAb167::getFloat_IlgAG121() {
-		return IlgAG121;
+	float junkClass_GbKYx73::getFloat_KPoij93() {
+		return KPoij93;
 	}
-	void junkClass_xHFAb167::setInt_IlgAG121(float newFloat) {
-		IlgAG121 = newFloat;
+	void junkClass_GbKYx73::setInt_KPoij93(float newFloat) {
+		KPoij93 = newFloat;
 	}
-	int junkClass_xHFAb167::getInt_JsDZE52() {
-		return JsDZE52;
+	int junkClass_GbKYx73::getInt_rJmmh93() {
+		return rJmmh93;
 	}
-	void junkClass_xHFAb167::setInt_JsDZE52(int newInt) {
-		JsDZE52 = newInt;
+	void junkClass_GbKYx73::setInt_rJmmh93(int newInt) {
+		rJmmh93 = newInt;
 	}
-	float junkClass_xHFAb167::2_generateRandString_eJvYc0() {
-		for(int i = 0; i < 40; i++) {
+	float junkClass_GbKYx73::2_generateRandString_BgHOn0() {
+		for(int i = 0; i < 69; i++) {
 			continue;
 		}
-		float junkFloat_eJvYc0 = 40.122;
-		return junkFloat_eJvYc0;
+		float junkFloat_BgHOn0 = 69.107;
+		return junkFloat_BgHOn0;
 	}
-	int junkClass_xHFAb167::1_generateRandInt_LCApT0() {
-		for(int i = 0; i < 40; i++) {
+	int junkClass_GbKYx73::1_generateRandInt_JaPys0() {
+		for(int i = 0; i < 69; i++) {
 			continue;
 		}
-		int junkInt_LCApT0 = 40;
-		return junkInt_LCApT0;
+		int junkInt_JaPys0 = 69;
+		return junkInt_JaPys0;
 	}
 }
-namespace junkNamespace_5338 {
-	junkClass_irfxB37::junkClass_irfxB37(std::string& avErm169,float YpbWj132,int vmbvR21) : junkCharArr_irfxB37(new char[1024]), junkInt_irfxB37(nullptr), avErm169(avErm169), YpbWj132(YpbWj132), vmbvR21(vmbvR21) { };
-	junkClass_irfxB37::~junkClass_irfxB37() {
-		delete[] junkCharArr_irfxB37; junkCharArr_irfxB37 = nullptr;
-		delete junkInt_irfxB37; junkInt_irfxB37 = nullptr;
+namespace junkNamespace_7685 {
+	junkClass_WhqXe36::junkClass_WhqXe36(std::string& XEflJ194,float ZpVCc74,int DTAbA73) : junkCharArr_WhqXe36(new char[1024]), junkInt_WhqXe36(nullptr), XEflJ194(XEflJ194), ZpVCc74(ZpVCc74), DTAbA73(DTAbA73) { };
+	junkClass_WhqXe36::~junkClass_WhqXe36() {
+		delete[] junkCharArr_WhqXe36; junkCharArr_WhqXe36 = nullptr;
+		delete junkInt_WhqXe36; junkInt_WhqXe36 = nullptr;
 	}
-	junkClass_irfxB37::junkClass_irfxB37(const irfxB37& oldJunkObj) {
-		junkInt_irfxB37 = new int;
-		*junkInt_irfxB37 = *oldJunkObj.junkInt_irfxB37;
-		junkCharArr_irfxB37 = new char[1024];
-		std::copy(junkCharArr_irfxB37,  oldJunkObj.junkCharArr_irfxB37);
-		avErm169 = oldJunkObj.avErm169;
-		YpbWj132 = oldJunkObj.YpbWj132;
-		vmbvR21 = oldJunkObj.vmbvR21;
+	junkClass_WhqXe36::junkClass_WhqXe36(const WhqXe36& oldJunkObj) {
+		junkInt_WhqXe36 = new int;
+		*junkInt_WhqXe36 = *oldJunkObj.junkInt_WhqXe36;
+		junkCharArr_WhqXe36 = new char[1024];
+		std::copy(junkCharArr_WhqXe36,  oldJunkObj.junkCharArr_WhqXe36);
+		XEflJ194 = oldJunkObj.XEflJ194;
+		ZpVCc74 = oldJunkObj.ZpVCc74;
+		DTAbA73 = oldJunkObj.DTAbA73;
 	}
-	junkClass_irfxB37::junkClass_irfxB37(irfxB37&& rValue) : junkCharArr_irfxB37(std::move(rValue.junkCharArr_irfxB37)), junkInt_irfxB37(std::move(rValue.junkInt_irfxB37)), avErm169(std::move(rValue.avErm169), YpbWj132(std::move(rValue.YpbWj132), vmbvR21(std::move(rValue.vmbvR21) {}
-	junkClass_irfxB37& junkClass_irfxB37::operator=(const irfxB37& toCopyAssign) {
-		std::swap(junkCharArr_irfxB37,toCopyAssign.junkCharArr_irfxB37);
-		std::swap(junkInt_irfxB37,toCopyAssign.junkInt_irfxB37);
-		std::swap(avErm169,toCopyAssign.avErm169);
-		std::swap(YpbWj132,toCopyAssign.YpbWj132);
-		std::swap(vmbvR21,toCopyAssign.vmbvR21);
+	junkClass_WhqXe36::junkClass_WhqXe36(WhqXe36&& rValue) : junkCharArr_WhqXe36(std::move(rValue.junkCharArr_WhqXe36)), junkInt_WhqXe36(std::move(rValue.junkInt_WhqXe36)), XEflJ194(std::move(rValue.XEflJ194), ZpVCc74(std::move(rValue.ZpVCc74), DTAbA73(std::move(rValue.DTAbA73) {}
+	junkClass_WhqXe36& junkClass_WhqXe36::operator=(const WhqXe36& toCopyAssign) {
+		std::swap(junkCharArr_WhqXe36,toCopyAssign.junkCharArr_WhqXe36);
+		std::swap(junkInt_WhqXe36,toCopyAssign.junkInt_WhqXe36);
+		std::swap(XEflJ194,toCopyAssign.XEflJ194);
+		std::swap(ZpVCc74,toCopyAssign.ZpVCc74);
+		std::swap(DTAbA73,toCopyAssign.DTAbA73);
 		return *this;
 	}
-	junkClass_irfxB37& junkClass_irfxB37::junkClass_irfxB37& operator=(irfxB37&& toMove) {
+	junkClass_WhqXe36& junkClass_WhqXe36::junkClass_WhqXe36& operator=(WhqXe36&& toMove) {
 		if(this != &toMove) {
-			delete junkCharArr_irfxB37;
-			delete junkInt_irfxB37;
-			junkCharArr_irfxB37 = std::move(toMove.junkCharArr_irfxB37);
-			junkInt_irfxB37 = std::move(toMove.junkInt_irfxB37);
-			avErm169 = std::move(toMove.avErm169);
-			YpbWj132 = std::move(toMove.YpbWj132);
-			vmbvR21 = std::move(toMove.vmbvR21);
+			delete junkCharArr_WhqXe36;
+			delete junkInt_WhqXe36;
+			junkCharArr_WhqXe36 = std::move(toMove.junkCharArr_WhqXe36);
+			junkInt_WhqXe36 = std::move(toMove.junkInt_WhqXe36);
+			XEflJ194 = std::move(toMove.XEflJ194);
+			ZpVCc74 = std::move(toMove.ZpVCc74);
+			DTAbA73 = std::move(toMove.DTAbA73);
 		}
 		return *this;
 	}
-	junkClass_irfxB37 operator+(const irfxB37& term_1, const irfxB37& term_2) {
-		junkClass_irfxB37 result = term_1;
-		result.junkInt_irfxB37 = term_1.junkInt_irfxB37 + term_2.junkInt_irfxB37;
+	junkClass_WhqXe36 operator+(const WhqXe36& term_1, const WhqXe36& term_2) {
+		junkClass_WhqXe36 result = term_1;
+		result.junkInt_WhqXe36 = term_1.junkInt_WhqXe36 + term_2.junkInt_WhqXe36;
 		return result;
 	}
-	string junkClass_irfxB37::getString_avErm169() {
-		return avErm169;
+	string junkClass_WhqXe36::getString_XEflJ194() {
+		return XEflJ194;
 	}
-	void junkClass_irfxB37::setString_avErm169(const std::string& newStr) {
-		avErm169 = newStr;
+	void junkClass_WhqXe36::setString_XEflJ194(const std::string& newStr) {
+		XEflJ194 = newStr;
 	}
-	float junkClass_irfxB37::getFloat_YpbWj132() {
-		return YpbWj132;
+	float junkClass_WhqXe36::getFloat_ZpVCc74() {
+		return ZpVCc74;
 	}
-	void junkClass_irfxB37::setInt_YpbWj132(float newFloat) {
-		YpbWj132 = newFloat;
+	void junkClass_WhqXe36::setInt_ZpVCc74(float newFloat) {
+		ZpVCc74 = newFloat;
 	}
-	int junkClass_irfxB37::getInt_vmbvR21() {
-		return vmbvR21;
+	int junkClass_WhqXe36::getInt_DTAbA73() {
+		return DTAbA73;
 	}
-	void junkClass_irfxB37::setInt_vmbvR21(int newInt) {
-		vmbvR21 = newInt;
+	void junkClass_WhqXe36::setInt_DTAbA73(int newInt) {
+		DTAbA73 = newInt;
 	}
-	float junkClass_irfxB37::2_generateRandString_VbHJG0() {
-		for(int i = 0; i < 45; i++) {
+	float junkClass_WhqXe36::2_generateRandString_qfQfx0() {
+		for(int i = 0; i < 74; i++) {
 			continue;
 		}
-		float junkFloat_VbHJG0 = 45.151;
-		return junkFloat_VbHJG0;
+		float junkFloat_qfQfx0 = 74.118;
+		return junkFloat_qfQfx0;
 	}
-	int junkClass_irfxB37::1_generateRandInt_jmupg0() {
-		for(int i = 0; i < 45; i++) {
+	int junkClass_WhqXe36::1_generateRandInt_tgqBk0() {
+		for(int i = 0; i < 74; i++) {
 			continue;
 		}
-		int junkInt_jmupg0 = 45;
-		return junkInt_jmupg0;
+		int junkInt_tgqBk0 = 74;
+		return junkInt_tgqBk0;
 	}
 }
-namespace junkNamespace_7996 {
-int MFIlH6601(int& cTeXo290, int& sCGIw114, int& RPspG140)
-	for(int i = 23; i<100; i++) {
-	continue;
+namespace junkNamespace_3116 {
+	int eoFqd4960(int& ipfou26) {
+		for(int i = 79; i<100; i++) {
+			continue;
+		}
+		for(int i = 96; i<100; i++) {
+			continue;
+		}
+		for(int i = 88; i<100; i++) {
+			continue;
+		}
+		int count_YOGQp269 = 16;
+		while(count_YOGQp269>0) {
+			count_YOGQp269--;
+			continue;
+		}
+		int count_jXDGo15 = 23;
+		while(count_jXDGo15>0) {
+			count_jXDGo15--;
+			continue;
+		}
+		int count_eHgcV99 = 46;
+		while(count_eHgcV99>0) {
+			count_eHgcV99--;
+			continue;
+		}
+		if(ipfou26 == 165) {
+			continue;
+		}else if(ipfou26 == 147) {
+			continue;
+		}else if(ipfou26 == 130) {
+			continue;
+		}else if(ipfou26 == 117) {
+			continue;
+		}else {
+			continue;
+		}
+		int iADaB85039;
+		return iADaB85039
+	}
+	string ZyUPH4488(int& ETFOo4) {
+		for(int i = 83; i<100; i++) {
+			continue;
+		}
+		for(int i = 37; i<100; i++) {
+			continue;
+		}
+		for(int i = 11; i<100; i++) {
+			continue;
+		}
+		int count_SYzLE248 = 15;
+		while(count_SYzLE248>0) {
+			count_SYzLE248--;
+			continue;
+		}
+		int count_KczgP192 = 26;
+		while(count_KczgP192>0) {
+			count_KczgP192--;
+			continue;
+		}
+		int count_WRAwq88 = 30;
+		while(count_WRAwq88>0) {
+			count_WRAwq88--;
+			continue;
+		}
+		if(ETFOo4 == 118) {
+			continue;
+		}else if(ETFOo4 == 119) {
+			continue;
+		}else if(ETFOo4 == 151) {
+			continue;
+		}else if(ETFOo4 == 111) {
+			continue;
+		}else {
+			continue;
+		}
+		string csttL32003;
+		return csttL32003
+	}
+	float MszUo1224() {
+		for(int i = 94; i<100; i++) {
+			continue;
+		}
+		for(int i = 55; i<100; i++) {
+			continue;
+		}
+		for(int i = 25; i<100; i++) {
+			continue;
+		}
+		int count_UgLAJ255 = 13;
+		while(count_UgLAJ255>0) {
+			count_UgLAJ255--;
+			continue;
+		}
+		int count_nhBNV4 = 44;
+		while(count_nhBNV4>0) {
+			count_nhBNV4--;
+			continue;
+		}
+		int count_OetJh94 = 2;
+		while(count_OetJh94>0) {
+			count_OetJh94--;
+			continue;
+		}
+		float LhTJW61853;
+		return LhTJW61853
+	}
 }
-for(int i = 85; i<100; i++) {
-	continue;
-}
-for(int i = 63; i<100; i++) {
-	continue;
-}
-int count_bBoMR234 = 46;
-while(count_bBoMR234>0) {
-	count_bBoMR234--;
-continue;
-}
-int count_lLBZd105 = 28;
-while(count_lLBZd105>0) {
-	count_lLBZd105--;
-continue;
-}
-int count_UvbRy80 = 33;
-while(count_UvbRy80>0) {
-	count_UvbRy80--;
-continue;
-}
-if(cTeXo290 == 114) {
-	continue;
-}else if(cTeXo290 == 120) {
-	continue;
-}else if(cTeXo290 == 121) {
-	continue;
-}else if(cTeXo290 == 122) {
-	continue;
-}if(sCGIw114 == 114) {
-	continue;
-}if(RPspG140 == 114) {
-	continue;
-}else {
-	continue;
-}
-3 OJUfL19995;
-return OJUfL19995string DBWPZ496()
-	for(int i = 69; i<100; i++) {
-	continue;
-}
-for(int i = 53; i<100; i++) {
-	continue;
-}
-for(int i = 59; i<100; i++) {
-	continue;
-}
-int count_tdrpe91 = 39;
-while(count_tdrpe91>0) {
-	count_tdrpe91--;
-continue;
-}
-int count_QSkKx28 = 23;
-while(count_QSkKx28>0) {
-	count_QSkKx28--;
-continue;
-}
-int count_sdbPQ21 = 31;
-while(count_sdbPQ21>0) {
-	count_sdbPQ21--;
-continue;
-}
-else {
-	continue;
-}
-2 jAINh31899;
-return jAINh31899float rtIHN2262()
-	for(int i = 68; i<100; i++) {
-	continue;
-}
-for(int i = 76; i<100; i++) {
-	continue;
-}
-for(int i = 8; i<100; i++) {
-	continue;
-}
-int count_weNzs241 = 4;
-while(count_weNzs241>0) {
-	count_weNzs241--;
-continue;
-}
-int count_zFRCK188 = 13;
-while(count_zFRCK188>0) {
-	count_zFRCK188--;
-continue;
-}
-int count_sHJri50 = 20;
-while(count_sHJri50>0) {
-	count_sHJri50--;
-continue;
-}
-else {
-	continue;
-}
-1 UbmMN62287;
-return UbmMN62287

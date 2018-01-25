@@ -2,6 +2,7 @@ from random2 import randint
 from random2 import seed
 from random2 import random
 from random2 import choice
+from textwrap import indent
 import string
 import re
 
@@ -96,9 +97,10 @@ def createFunctionParameters(num):
 #numParameter is random number, where return value(s) will be different based on number given
 #Default is 0
 def createFunction(returnType = 0, numParameter = 0):
-    result = createFunctionParameters(numParameter)
-    functionStr = createFunctionReturnType(returnType) + ' ' + createRandomName(randint(0,99)) + '(' + result[0] + ')'
-    return functionStr, result   
+    paramStr = createFunctionParameters(numParameter)
+    functionReturnStr = createFunctionReturnType(returnType)
+    functionStr = functionReturnStr + ' ' + createRandomName(randint(0,99)) + '(' + paramStr[0] + ')'
+    return functionStr, paramStr, functionReturnStr   
 
 #number of variable is dependent on number of parameters + random variables (numVar) created within scope
 #paramter is passed as list of parameters
@@ -118,7 +120,7 @@ def createFunctionDefinition(returnType, parameter):
         numWhileLoop_Temp = numWhileLoop
         while(numWhileLoop_Temp > 0):
             randomCountName = createRandomName(numWhileLoop_Temp)
-            functionDefinitionStr += 'int count_' + randomCountName + ' = ' + str(randint(0,50)) + ';\nwhile(count_' + randomCountName + '>0) {\n\tcount_' + randomCountName + '--;\ncontinue;\n}\n'
+            functionDefinitionStr += 'int count_' + randomCountName + ' = ' + str(randint(0,50)) + ';\nwhile(count_' + randomCountName + '>0) {\n\tcount_' + randomCountName + '--;\n\tcontinue;\n}\n'
             numWhileLoop_Temp -= 1
 
     if 0 < numBranchStatement < 10:
@@ -159,6 +161,7 @@ def createFunctionDefinition(returnType, parameter):
                     while(numBranchStatement_Temp > 0):
                         functionDefinitionStr += 'else if(*' + paramList[counter + 1] + ' == junkStr_' + str(randint(100,199)) + ') {\n\tcontinue;\n}'  
                         numBranchStatement_Temp -= 1
+                functionDefinitionStr += 'else {\n\tcontinue;\n}\n'
                 counter += 2           
 
         else:
@@ -187,8 +190,7 @@ def createFunctionDefinition(returnType, parameter):
                 while(numBranchStatement_Temp > 0):
                     functionDefinitionStr += 'else if(char ' + branchStatementName + ' == ' + choice(string.ascii_letters) + ') {\n\tcontinue;\n}'  
                     numBranchStatement_Temp -= 1 
-
-        functionDefinitionStr += 'else {\n\tcontinue;\n}\n'
+            functionDefinitionStr += 'else {\n\tcontinue;\n}\n'
     
     else:
         if 0 < numVar < 5:
@@ -197,12 +199,11 @@ def createFunctionDefinition(returnType, parameter):
                 functionDefinitionStr += str(varTypes[randint(0,4)]) + ' ' + createRandomName(numVar) + ';\n'
                 numVar_Temp -= 1
 
-    if returnType != 0:
+    if returnType != 'void': #if return type is not void
         randomReturnName = createRandomName(randint(500,1000))
-        functionDefinitionStr += str(returnType) + ' ' + randomReturnName + ';\nreturn ' + randomReturnName
+        functionDefinitionStr += returnType + ' ' + randomReturnName + ';\nreturn ' + randomReturnName
     
     return functionDefinitionStr
-    
                                               
 #def createMethod(returnType, className, numParameter):
     
@@ -394,14 +395,12 @@ outputFile_Cpp.write("namespace junkNamespace_" + junkFunctionNamspace_Name + " 
 if 0 < numFunction <= 5:
     numFunction_Temp = numFunction
     while numFunction_Temp > 0:
-        functionPrototype, functionParamList = createFunction(numFunction_Temp, numFunction_Temp)
-        #randomReturnType = createFunctionReturnType(numFunction_Temp)
-        #randomFunctionName = createRandomName(numFunction_Temp)
-        #randomFunctionParameter = createFunctionParameters(numFunction_Temp)
-        outputFile_Cpp.write(functionPrototype + '\n\t' + createFunctionDefinition(numFunction_Temp,functionParamList))
-        #outputFile_Header.write('\t' +  + ');\n')
+        functionPrototype, functionParamList, functionReturnType = createFunction(numFunction_Temp, numFunction_Temp)
+        outputFile_Header.write(indent(functionPrototype + ';\n','\t'))
+        outputFile_Cpp.write(indent(functionPrototype,'\t') + ' {\n' + indent(createFunctionDefinition(functionReturnType,functionParamList),'\t\t') + '\n\t}\n')
         numFunction_Temp -= 1
 outputFile_Header.write("}\n\n#endif")
+outputFile_Cpp.write("}")
 
 outputFile_Header.close()   
 outputFile_Cpp.close()
