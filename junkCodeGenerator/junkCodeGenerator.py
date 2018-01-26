@@ -5,20 +5,124 @@ from random2 import choice
 from textwrap import indent
 import string
 import re
+import sys
 
-outputFile_Header = open('E:\Desktop\junkCodeGenerator\junkCodeGenerator\junkCodefile_header.txt','w')
-outputFile_Cpp = open('E:\Desktop\junkCodeGenerator\junkCodeGenerator\junkCodefile_cpp.txt','w')
+outputFile_Header = open('junkCodefile_header.txt','w')
+outputFile_Cpp = open('junkCodefile_cpp.txt','w')
 
-numClass = int(input('Input number of classes: '))
-numClassVariable = int(input('Input number of class variables: '))
-numClassMethod = int(input('Input number of class methods: '))
-numFunction = int(input('Input number of functions: '))
-numVar = int(input('Input number of variables: '))
-numForLoop = int(input('Input number of for loops: '))
-numWhileLoop = int(input('Input number of while loops: '))
-numBranchStatement  = int(input('Input number of branch statement: '))
+numClass = 0
+numClassVariable = 0
+numClassMethod = 0
+numFunction = 0
+numVar = 0
+numForLoop = 0
+numWhileLoop = 0
+numBranchStatement = 0
 
-#Junk name
+#################################
+######### Get Inputs ############
+#################################
+#Valid for range in 0,1,2,3,4,5,6,7,8,9,10
+#isdigit is automatically False since strings are empty initially
+while True:
+    try:
+        numClass = int(input('Input number of classes (0 < Entered value <= 10): '))
+        if numClass not in range(0,11):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+while True:
+    try:
+        numClassVariable = int(input('Input number of class variables (Required: 0 < Entered value < 10): '))
+        if numClass not in range(0,11):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()   
+
+while True:
+    try:
+        numClassMethod = int(input('Input number of class methods (Required: 0 < Entered value <= 10): '))
+        if numClass not in range(0,11):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+while True:
+    try:
+        numFunction = int(input('Input number of functions (0 < Entered value < 10): Default is 1: '))
+        if numClass not in range(0,11):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+while True:
+    try:
+        numVar = int(input('Input number of variables (0 < Entered value < 10): Default is 1: '))
+        if numClass not in range(0,6):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+while True:
+    try:
+        numForLoop = int(input('Input number of for loops (0 < Entered value < 10): Default is 1: '))
+        if numClass not in range(0,6):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+while True:
+    try:
+        numWhileLoop = int(input('Input number of while loops (0 < Entered val1ue < 10): Default is 1: '))
+        if numClass not in range(0,6):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+while True:
+    try:
+        numBranchStatement  = int(input('Input number of branch statement (0 < Entered value < 10): Default is 1: '))
+        if numClass not in range(0,6):
+            print('Enter input with valid range.')
+        else:
+            break
+    except(ValueError):
+        print('Not valid input. Must be an integer.')
+    except(EOFError, KeyboardInterrupt, SystemExit):
+        sys.exit()
+
+########################################
+#########Create Junk name###############
+########################################
 def createRandomName(num):
     result = (choice(string.ascii_letters) for intNum in range(5))
     randName = ''
@@ -27,7 +131,9 @@ def createRandomName(num):
     randName += str(randint(0,num*100))
     return randName
 
-#Function Return Types
+###############################################################
+################# Create Function Return Types ################
+###############################################################
 def createFunctionReturnType(num):
     returnType = ('void','float','string','int')
     randValue = (num * 1337) % 4
@@ -40,7 +146,9 @@ def createFunctionReturnType(num):
     else:
         return returnType[0]
 
-#Function Parameters
+#######################################################
+########### Create Function Parameters ################
+#######################################################
 def createFunctionParameters(num):
     parameterType = ('int','float','string')
 
@@ -93,6 +201,9 @@ def createFunctionParameters(num):
         counter -= 1
     return functionParameterStr, functionParameterList
 
+###############################################
+######## Create function prototype ############
+###############################################
 #returnType is random number, where return value(s) will be different based on number given
 #numParameter is random number, where return value(s) will be different based on number given
 #Default is 0
@@ -102,6 +213,9 @@ def createFunction(returnType = 0, numParameter = 0):
     functionStr = functionReturnStr + ' ' + createRandomName(randint(0,99)) + '(' + paramStr[0] + ')'
     return functionStr, paramStr, functionReturnStr   
 
+############################################
+####### Create function definition #########
+############################################
 #number of variable is dependent on number of parameters + random variables (numVar) created within scope
 #paramter is passed as list of parameters
 #To preserve O(n) running time, no nested for loop
@@ -110,25 +224,26 @@ def createFunctionDefinition(returnType, parameter):
     paramList = parameter[1]
     varTypes = ('int','float','string','double','char')
 
-    if 0 < numForLoop < 5:
+    if 0 < numForLoop <= 5:
         numForLoop_Temp = numForLoop
         while(numForLoop_Temp > 0):
             functionDefinitionStr += 'for(int i = ' + str(randint(0,99)) + '; i<100; i++) {\n\tcontinue;\n}\n'
             numForLoop_Temp -= 1
     
-    if 0 < numWhileLoop < 5:
+    if 0 < numWhileLoop <= 5:
         numWhileLoop_Temp = numWhileLoop
         while(numWhileLoop_Temp > 0):
             randomCountName = createRandomName(numWhileLoop_Temp)
             functionDefinitionStr += 'int count_' + randomCountName + ' = ' + str(randint(0,50)) + ';\nwhile(count_' + randomCountName + '>0) {\n\tcount_' + randomCountName + '--;\n\tcontinue;\n}\n'
             numWhileLoop_Temp -= 1
 
-    if 0 < numBranchStatement < 10:
+    if 0 < numBranchStatement <= 5:
         numBranchStatement_Temp = numBranchStatement
         branchStatementName = createRandomName(numBranchStatement_Temp)
         branchStatementConditionVal_Num = str(randint(0,200))
         branchstatementConditionVal_Char = choice(string.ascii_letters)
-        if 0 < numVar < 5:
+        if len(paramList) > 0:  #At least 1 variable in parameter (minimum length will be 2, 
+                                #1 index for variable type and 1 index for variable name
             counter = 0
             while counter < len(paramList):
                 if paramList[counter] == 'int&' or 'const int&':
@@ -164,7 +279,7 @@ def createFunctionDefinition(returnType, parameter):
                 functionDefinitionStr += 'else {\n\tcontinue;\n}\n'
                 counter += 2           
 
-        else:
+        else:   #No parameters passed into function
             if numBranchStatement_Temp % 5 == 0:
                 functionDefinitionStr += 'if(' + 'int ' + branchStatementName + ' == ' + branchStatementConditionVal_Num + ') {\n\tcontinue;\n}'
                 while(numBranchStatement_Temp > 0):
@@ -192,21 +307,24 @@ def createFunctionDefinition(returnType, parameter):
                     numBranchStatement_Temp -= 1 
             functionDefinitionStr += 'else {\n\tcontinue;\n}\n'
     
-    else:
-        if 0 < numVar < 5:
-            numVar_Temp = numVar
-            while(numVar_Temp > 0):
-                functionDefinitionStr += str(varTypes[randint(0,4)]) + ' ' + createRandomName(numVar) + ';\n'
-                numVar_Temp -= 1
+    if 0 < numVar <= 5:
+        numVar_Temp = numVar
+        while(numVar_Temp > 0):
+            functionDefinitionStr += str(varTypes[randint(0,4)]) + ' ' + createRandomName(numVar) + ';\n'
+            numVar_Temp -= 1
 
     if returnType != 'void': #if return type is not void
         randomReturnName = createRandomName(randint(500,1000))
         functionDefinitionStr += returnType + ' ' + randomReturnName + ';\nreturn ' + randomReturnName
+
+    if functionDefinitionStr == '': #Empty function definition 
+        functionDefinitionStr = 'return;\n'
     
     return functionDefinitionStr
-                                              
-#def createMethod(returnType, className, numParameter):
-    
+
+def defineNumOfClassMethods():
+    #Define recursively
+                                             
 ##########################################################################################################
 ################################    Write to Files  ######################################################
 ##########################################################################################################   
@@ -251,6 +369,9 @@ if 0 < numClass <= 10:
         ###############################################
         ##Write prototype constructor and destructors##
         ###############################################
+        explicitRandomConstructorName = createRandomName(randint(50,99))
+        outputFile_Header.write('\t\texplicit junkClass_' + randomClassName + '(int ' + explicitRandomConstructorName + ');\n')
+        outputFile_Header.write('\t\texplicit junkClass_' + randomClassName + '(float ' + explicitRandomConstructorName + ');\n')
         outputFile_Header.write('\t\tjunkClass_' + randomClassName + '(' + classConstructor + ');\n') #Constructor
         outputFile_Header.write('\t\t~junkClass_' + randomClassName + '();\n') #Destructor
         outputFile_Header.write('\t\tjunkClass_' + randomClassName + '(const ' + randomClassName + '& oldJunkObj);\n') #Copy Constructor
@@ -262,11 +383,13 @@ if 0 < numClass <= 10:
         ##Define constructor and destructors##
         ######################################
         #Explicit Constructor
-        if classConstructor == 'int ' or classConstructor == 'float ':
-            outputFile_Cpp.write('\texplicit ' +  
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(int ' + explicitRandomConstructorName + ') : junkCharArr_' + 
+                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)') 
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(float ' + explicitRandomConstructorName + ') : junkCharArr_' + 
+                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)') 
         #Constructor
-        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(' + classConstructor + ')')
-        outputFile_Cpp.write(' : junkCharArr_' + randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)')
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(' + classConstructor + ') : junkCharArr_' + 
+                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)')
         if classConstructor != '':
             outputFile_Cpp.write(', ')
             classParamList = re.split(',|\s+',classConstructor)
@@ -395,7 +518,7 @@ if 0 < numClass <= 10:
 junkFunctionNamspace_Name = str(randint(0,9999))
 outputFile_Header.write("namespace junkNamespace_" + junkFunctionNamspace_Name + " {\n")
 outputFile_Cpp.write("namespace junkNamespace_" + junkFunctionNamspace_Name + " {\n")
-if 0 < numFunction <= 5:
+if 0 < numFunction <= 10:
     numFunction_Temp = numFunction
     while numFunction_Temp > 0:
         functionPrototype, functionParamList, functionReturnType = createFunction(numFunction_Temp, numFunction_Temp)

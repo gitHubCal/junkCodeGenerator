@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>junkCodeGenerator</Name>
     <RootNamespace>junkCodeGenerator</RootNamespace>
-    <InterpreterId>{4c60a0a2-1be5-49cd-a9f3-c2dfe3bdd6a3}</InterpreterId>
+    <InterpreterId>{c46d9247-2083-48f4-9c54-378a8be8c851}</InterpreterId>
     <InterpreterVersion>3.5</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -27,7 +27,7 @@
     <Compile Include="junkCodeGenerator.py" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="{4c60a0a2-1be5-49cd-a9f3-c2dfe3bdd6a3}\3.5" />
+    <InterpreterReference Include="{c46d9247-2083-48f4-9c54-378a8be8c851}\3.5" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
