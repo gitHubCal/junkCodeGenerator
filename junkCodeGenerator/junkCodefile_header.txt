@@ -1,0 +1,87 @@
+#ifndef OUTPUTFILE_H
+#define OUTPUTFILE_H
+#include<iostream>
+#include<string>
+
+namespace junkNamespace_6403 {
+	class junkClass_abwPo249 {
+	private:
+		char *junkCharArr_abwPo249;
+		int *junkInt_abwPo249;
+		std::string fpKDp209;
+		float OVYGV186;
+		int RCunD35;
+	public:
+		explicit junkClass_abwPo249(int PrznH149);
+		explicit junkClass_abwPo249(float cxfiw2129);
+		junkClass_abwPo249(std::string& fpKDp209, float OVYGV186, int RCunD35);
+		~junkClass_abwPo249();
+		junkClass_abwPo249(const abwPo249& oldJunkObj);
+		junkClass_abwPo249( abwPo249&& rValue) : junkCharArr_abwPo249(std::move(rValue.junkCharArr_abwPo249)), junkInt_abwPo249(std::move(rValue.junkInt_abwPo249));
+		junkClass_abwPo249& operator=(const abwPo249& toCopyAssign);
+		junkClass_abwPo249& operator=(abwPo249&& toMove);
+		friend junkClass_abwPo249 operator+(const junkClass_abwPo249& term_1, const junkClass_abwPo249& term_2);
+		string getString_fpKDp209();
+		float getFloat_OVYGV186();
+		int getInt_RCunD35();
+		float 2_generateRandFloat_FdFSc178();
+		int 1_generateRandInt_qRzLA83();
+	};
+}
+namespace junkNamespace_8272 {
+	class junkClass_sohKV109 {
+	private:
+		char *junkCharArr_sohKV109;
+		int *junkInt_sohKV109;
+		std::string iFLST42;
+		float WkddS186;
+		int zOydq1;
+	public:
+		explicit junkClass_sohKV109(int KHGwA2753);
+		explicit junkClass_sohKV109(float rPrjP3112);
+		junkClass_sohKV109(std::string& iFLST42, float WkddS186, int zOydq1);
+		~junkClass_sohKV109();
+		junkClass_sohKV109(const sohKV109& oldJunkObj);
+		junkClass_sohKV109( sohKV109&& rValue) : junkCharArr_sohKV109(std::move(rValue.junkCharArr_sohKV109)), junkInt_sohKV109(std::move(rValue.junkInt_sohKV109));
+		junkClass_sohKV109& operator=(const sohKV109& toCopyAssign);
+		junkClass_sohKV109& operator=(sohKV109&& toMove);
+		friend junkClass_sohKV109 operator+(const junkClass_sohKV109& term_1, const junkClass_sohKV109& term_2);
+		string getString_iFLST42();
+		float getFloat_WkddS186();
+		int getInt_zOydq1();
+		float 2_generateRandFloat_OeSah34();
+		int 1_generateRandInt_PVIKW40();
+	};
+}
+namespace junkNamespace_8089 {
+	class junkClass_FtZlp20 {
+	private:
+		char *junkCharArr_FtZlp20;
+		int *junkInt_FtZlp20;
+		std::string KQfLV54;
+		float gdHfw88;
+		int myBoS63;
+	public:
+		explicit junkClass_FtZlp20(int IzNqz2715);
+		explicit junkClass_FtZlp20(float ewLCf572);
+		junkClass_FtZlp20(std::string& KQfLV54, float gdHfw88, int myBoS63);
+		~junkClass_FtZlp20();
+		junkClass_FtZlp20(const FtZlp20& oldJunkObj);
+		junkClass_FtZlp20( FtZlp20&& rValue) : junkCharArr_FtZlp20(std::move(rValue.junkCharArr_FtZlp20)), junkInt_FtZlp20(std::move(rValue.junkInt_FtZlp20));
+		junkClass_FtZlp20& operator=(const FtZlp20& toCopyAssign);
+		junkClass_FtZlp20& operator=(FtZlp20&& toMove);
+		friend junkClass_FtZlp20 operator+(const junkClass_FtZlp20& term_1, const junkClass_FtZlp20& term_2);
+		string getString_KQfLV54();
+		float getFloat_gdHfw88();
+		int getInt_myBoS63();
+		float 2_generateRandFloat_rJHnz124();
+		int 1_generateRandInt_pmkcA85();
+	};
+}
+namespace junkNamespace_7169 {
+	int bLdmw555(int& pLhdG108);
+	string gaLxv1043(int& fiykP22, int& BOkny26);
+	float TtDXZ5930(int& TnZrL9);
+}
+
+#endif
