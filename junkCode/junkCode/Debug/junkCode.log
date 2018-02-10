@@ -1,0 +1,22 @@
+﻿  junkCodefile_cpp.cpp
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(15): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(71): warning C4305: 'initializing': truncation from 'double' to 'float'
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(96): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(152): warning C4305: 'initializing': truncation from 'double' to 'float'
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(177): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(233): warning C4305: 'initializing': truncation from 'double' to 'float'
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(269): warning C4101: 'KmRYD161': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(271): warning C4101: 'uGwZA24': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(270): warning C4101: 'WhBuh187': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(298): warning C4101: 'KAFmD172': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(297): warning C4101: 'KnBMg114': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(299): warning C4101: 'vLIvk66': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(325): warning C4101: 'Wwsnt47': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(326): warning C4101: 'gGKNo8': unreferenced local variable
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(273): warning C4700: uninitialized local variable 'JjJJO21667' used
+e:\desktop\junkcode\junkcode\junkcodefile_cpp.cpp(329): warning C4700: uninitialized local variable 'OnQEN36676' used
+  junkCode.vcxproj -> E:\Desktop\junkCode\Debug\junkCode.exe
+  junkCode.vcxproj -> E:\Desktop\junkCode\Debug\junkCode.pdb (Full PDB)
