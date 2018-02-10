@@ -134,7 +134,7 @@ def createRandomName(num):
 ################# Create Function Return Types ################
 ###############################################################
 def createFunctionReturnType(num):
-    returnType = ('void','float','string','int')
+    returnType = ('void','float','std::string','int')
     randValue = (num * 1337) % 4
     if randValue == 1:
         return returnType[1]
@@ -149,7 +149,7 @@ def createFunctionReturnType(num):
 ########### Create Function Parameters ################
 #######################################################
 def createFunctionParameters(num):
-    parameterType = ('int','float','string')
+    parameterType = ('int','float','std::string')
 
     functionParameterStr = ''
     functionParameterList = []
@@ -250,32 +250,32 @@ def createBranchStatement(numBranchStatement, lengthOfParameterList, parameterLi
     branchStatementConditionVal_Num = str(randint(0,200))
     branchstatementConditionVal_Char = choice(string.ascii_letters)
     if lengthOfParameterList == 0:
-        branchStatementName = createRandomName(numBranchStatement_Temp)
-        if numBranchStatement_Temp % 5 == 0:
+        branchStatementName = createRandomName(numBranchStatement)
+        if numBranchStatement % 5 == 0:
             functionDefinitionStr += 'if(' + 'int ' + branchStatementName + ' == ' + branchStatementConditionVal_Num + ') {\n\tcontinue;\n}'
             numBranchStatement_Temp = numBranchStatement
             while(numBranchStatement_Temp > 0):
                 functionDefinitionStr += 'else if(int ' + branchStatementName + ' == ' + str(randint(100,199)) + ') {\n\tcontinue;\n}'  
                 numBranchStatement_Temp -= 1 
-        elif numBranchStatement_Temp % 5 == 1:
+        elif numBranchStatement % 5 == 1:
             functionDefinitionStr += 'if(' + 'float ' + branchStatementName + ' == ' + branchStatementConditionVal_Num + '.01) {\n\tcontinue;\n}'
             numBranchStatement_Temp = numBranchStatement
             while(numBranchStatement_Temp > 0):
                 functionDefinitionStr += 'else if(float ' + branchStatementName + ' == ' + str(randint(100,199)) + '.02) {\n\tcontinue;\n}'  
                 numBranchStatement_Temp -= 1 
-        elif numBranchStatement_Temp % 5 == 2:
-            functionDefinitionStr += 'if(' + 'string ' + branchStatementName + ' == junkStr_' + branchStatementConditionVal_Num + ') {\n\tcontinue;\n}'
+        elif numBranchStatement % 5 == 2:
+            functionDefinitionStr += 'if(' + 'std::string ' + branchStatementName + ' == junkStr_' + branchStatementConditionVal_Num + ') {\n\tcontinue;\n}'
             numBranchStatement_Temp = numBranchStatement
             while(numBranchStatement_Temp > 0):
-                functionDefinitionStr += 'else if(string ' + branchStatementName + ' == ' + 'junkStr_' + str(randint(100,199)) + ') {\n\tcontinue;\n}'  
+                functionDefinitionStr += 'else if(std::string ' + branchStatementName + ' == ' + 'junkStr_' + str(randint(100,199)) + ') {\n\tcontinue;\n}'  
                 numBranchStatement_Temp -= 1 
-        elif numBranchStatement_Temp % 5 == 3:
+        elif numBranchStatement % 5 == 3:
             functionDefinitionStr += 'if(' + 'double ' + branchStatementName + ' == ' + branchStatementConditionVal_Num + '.03) {\n\tcontinue;\n}'
             numBranchStatement_Temp = numBranchStatement
             while(numBranchStatement_Temp > 0):
                 functionDefinitionStr += 'else if(double ' + branchStatementName + ' == ' + 'junkStr_' + str(randint(100,199)) + '.03) {\n\tcontinue;\n}'  
                 numBranchStatement_Temp -= 1 
-        elif numBranchStatement_Temp % 5 == 4:
+        elif numBranchStatement % 5 == 4:
             functionDefinitionStr += 'if(' + 'char ' + branchStatementName + ' == ' + branchStatementConditionVal_Char + ') {\n\tcontinue;\n}'
             numBranchStatement_Temp = numBranchStatement
             while(numBranchStatement_Temp > 0):
@@ -309,13 +309,13 @@ def createBranchStatement(numBranchStatement, lengthOfParameterList, parameterLi
                 while(numBranchStatement_Temp > 0):
                     functionDefinitionStr += 'else if(*' + parameterList[counter + 1] + ' == ' + str(randint(100,199)) + '.02) {\n\tcontinue;\n}'  
                     numBranchStatement_Temp -= 1
-            elif parameterList[counter] == 'string&' or 'const string&':
+            elif parameterList[counter] == 'std::string&' or 'const std::string&':
                 functionDefinitionStr += 'if(' + parameterList[counter + 1] + ' == junkStr_' + branchStatementConditionVal_Num + ') {\n\tcontinue;\n}'  
                 numBranchStatement_Temp = numBranchStatement
                 while(numBranchStatement_Temp > 0):
                     functionDefinitionStr += 'else if(' + parameterList[counter + 1] + ' == junkStr_' + str(randint(100,199)) + ') {\n\tcontinue;\n}'  
                     numBranchStatement_Temp -= 1
-            elif parameterList[counter] == 'string*':
+            elif parameterList[counter] == 'std::string*':
                 functionDefinitionStr += 'if(*' + parameterList[counter + 1] + ' == junkStr_' + branchStatementConditionVal_Num + ') {\n\tcontinue;\n}'
                 numBranchStatement_Temp = numBranchStatement
                 while(numBranchStatement_Temp > 0):
@@ -323,7 +323,6 @@ def createBranchStatement(numBranchStatement, lengthOfParameterList, parameterLi
                     numBranchStatement_Temp -= 1
             functionDefinitionStr += 'else {\n\tcontinue;\n}\n'
             counter += 2           
-        
             
 ############################################
 ####### Create function definition #########
@@ -333,7 +332,7 @@ def createBranchStatement(numBranchStatement, lengthOfParameterList, parameterLi
 def createFunctionDefinition(returnType, parameter):
     functionDefinitionStr = ''
     paramList = parameter[1]
-    varTypes = ('int','float','string','double','char')
+    varTypes = ('int','float','std::string','double','char')
 
     functionDefinitionStr = createForLoop(numForLoop, functionDefinitionStr)
     functionDefinitionStr = createWhileLoop(numWhileLoop, functionDefinitionStr)
@@ -342,7 +341,7 @@ def createFunctionDefinition(returnType, parameter):
 
     if returnType != 'void': #if return type is not void
         randomReturnName = createRandomName(randint(500,1000))
-        functionDefinitionStr += returnType + ' ' + randomReturnName + ';\nreturn ' + randomReturnName
+        functionDefinitionStr += returnType + ' ' + randomReturnName + ';\nreturn ' + randomReturnName + ';\n'
 
     if functionDefinitionStr == '': #Empty function definition 
         functionDefinitionStr = 'return;\n'
@@ -359,7 +358,7 @@ def defineClassVariableList(numClassVariable, classVarList):
         randomClassVariableName = createRandomName(numClassVariable)
         if numClassVariable % 3 == 0:
             outputFile_Header.write('\t\tstd::string ' + randomClassVariableName + ';\n')
-            classVarList.append('std::string&')
+            classVarList.append('std::string')
         elif numClassVariable % 3 == 1:
             outputFile_Header.write('\t\tint ' + randomClassVariableName + ';\n')
             classVarList.append('int')
@@ -390,22 +389,22 @@ def defineAccessorAndSetter(randomClassName, lengthOfClassVarList, classVarList,
         return
     else:
         randomInt = randint(0,99)
-        if classVarList[classVarListIndex-1] == 'std::string&':
-            outputFile_Header.write('\t\tstring ' + 'getString_' + classVarList[classVarListIndex] + '();\n')
-            outputFile_Cpp.write('\tstring ' + 'junkClass_' + randomClassName + '::getString_' + classVarList[classVarListIndex] + '() {\n\t\treturn ' + 
+        if classVarList[classVarListIndex-1] == 'std::string':
+            outputFile_Header.write('\t\tstd::string ' + 'getString_' + classVarList[classVarListIndex] + '();\n\t\tvoid setString_' + classVarList[classVarListIndex] + '(const std::string& newStr);\n')
+            outputFile_Cpp.write('\tstd::string ' + 'junkClass_' + randomClassName + '::getString_' + classVarList[classVarListIndex] + '() {\n\t\treturn ' + 
                                  classVarList[classVarListIndex] + ';\n\t}\n' + '\tvoid ' + 'junkClass_' + randomClassName + '::setString_' + 
                                  classVarList[classVarListIndex] + '(const std::string& newStr) {\n\t\t' + classVarList[classVarListIndex] + 
                                  ' = newStr;\n\t}\n')       
         elif classVarList[classVarListIndex-1] == 'int':
-            outputFile_Header.write('\t\tint ' + 'getInt_' + classVarList[classVarListIndex] + '();\n')
+            outputFile_Header.write('\t\tint ' + 'getInt_' + classVarList[classVarListIndex] + '();\n\t\tvoid setInt_' + classVarList[classVarListIndex] + '(int newInt);\n')
             outputFile_Cpp.write('\tint ' + 'junkClass_' + randomClassName + '::getInt_' + classVarList[classVarListIndex] + '() {\n\t\treturn ' + 
                                  classVarList[classVarListIndex] + ';\n\t}\n' + '\tvoid ' + 'junkClass_' + randomClassName + '::setInt_' + 
                                  classVarList[classVarListIndex] + '(int newInt) {\n\t\t' + classVarList[classVarListIndex] + 
                                  ' = newInt;\n\t}\n')
         elif classVarList[classVarListIndex-1] == 'float':
-            outputFile_Header.write('\t\tfloat ' + 'getFloat_' + classVarList[classVarListIndex] + '();\n')
+            outputFile_Header.write('\t\tfloat ' + 'getFloat_' + classVarList[classVarListIndex] + '();\n\t\tvoid setFloat_' + classVarList[classVarListIndex] + '(float newFloat);\n')
             outputFile_Cpp.write('\tfloat ' + 'junkClass_' + randomClassName + '::getFloat_' + classVarList[classVarListIndex] + '() {\n\t\treturn ' + 
-                                 classVarList[classVarListIndex] + ';\n\t}\n' + '\tvoid ' + 'junkClass_' + randomClassName + '::setInt_' + 
+                                 classVarList[classVarListIndex] + ';\n\t}\n' + '\tvoid ' + 'junkClass_' + randomClassName + '::setFloat_' + 
                                  classVarList[classVarListIndex] + '(float newFloat) {\n\t\t' + classVarList[classVarListIndex] + 
                                  ' = newFloat;\n\t}\n')    
         defineAccessorAndSetter(randomClassName, lengthOfClassVarList, classVarList, classVarListIndex + 2)
@@ -420,18 +419,18 @@ def defineClassMethod(randomClassName, numClassMethod):
         randomClassMethodName = createRandomName(numClassMethod)
         randomInt = randint(0,99)
         if numClassMethod % 4 == 0:
-            outputFile_Header.write('\t\tstring ' + str(numClassMethod) + '_generateRandString_' + randomClassMethodName + '();\n')
-            outputFile_Cpp.write('\tstring ' + 'junkClass_' + randomClassName + '::' + str(numClassMethod) + '_generateRandString_' + randomClassMethodName + 
+            outputFile_Header.write('\t\tstd::string ' + 'generateRandString_' + randomClassMethodName + '_' + str(numClassMethod) + '();\n')
+            outputFile_Cpp.write('\tstd::string ' + 'junkClass_' + randomClassName + '::' + 'generateRandString_' + randomClassMethodName + '_' + str(numClassMethod) +
                                     '() {\n\t\tfor(int i = 0; i < ' + str(randomInt) + '; i++) {\n\t\t\tcontinue;\n\t\t}\n\t\tstring junkString_' + randomClassMethodName + 
                                     ' = junkStr_' + str(randomInt) + ';\n\t\treturn junkString_' + randomClassMethodName + ';\n\t}\n')    
         elif numClassMethod % 4 == 1:
-            outputFile_Header.write('\t\tint ' + str(numClassMethod) + '_generateRandInt_' + randomClassMethodName + '();\n')
-            outputFile_Cpp.write('\tint ' + 'junkClass_' + randomClassName + '::' + str(numClassMethod) + '_generateRandInt_' + randomClassMethodName + 
+            outputFile_Header.write('\t\tint ' + 'generateRandInt_' + randomClassMethodName + '_' + str(numClassMethod) + '();\n')
+            outputFile_Cpp.write('\tint ' + 'junkClass_' + randomClassName + '::' + 'generateRandInt_' + randomClassMethodName + '_' + str(numClassMethod) +
                                     '() {\n\t\tfor(int i = 0; i < ' + str(randomInt) + '; i++) {\n\t\t\tcontinue;\n\t\t}\n\t\tint junkInt_' + randomClassMethodName + 
                                     ' = ' + str(randomInt) + ';\n\t\treturn junkInt_' + randomClassMethodName + ';\n\t}\n')
         elif numClassMethod % 4 == 2:
-            outputFile_Header.write('\t\tfloat ' + str(numClassMethod) + '_generateRandFloat_' + randomClassMethodName + '();\n')
-            outputFile_Cpp.write('\tfloat ' + 'junkClass_' + randomClassName + '::' + str(numClassMethod) + '_generateRandString_' + randomClassMethodName + 
+            outputFile_Header.write('\t\tfloat ' + 'generateRandFloat_' + randomClassMethodName + '_' + str(numClassMethod) + '();\n')
+            outputFile_Cpp.write('\tfloat ' + 'junkClass_' + randomClassName + '::' + 'generateRandFloat_' + randomClassMethodName + '_' + str(numClassMethod) + 
                                     '() {\n\t\tfor(int i = 0; i < ' + str(randomInt) + '; i++) {\n\t\t\tcontinue;\n\t\t}\n\t\tfloat junkFloat_' + randomClassMethodName + 
                                     ' = ' + str(randomInt) + '.' + str(randint(100,200)) + ';\n\t\treturn junkFloat_' + randomClassMethodName + ';\n\t}\n')   
         defineClassMethod(randomClassName, numClassMethod-1) 
@@ -471,22 +470,21 @@ def createClass(numClasses):
         outputFile_Header.write('\t\texplicit junkClass_' + randomClassName + '(float ' + explicitRandomConstructorName_Float + ');\n')
         outputFile_Header.write('\t\tjunkClass_' + randomClassName + '(' + classConstructorStr + ');\n') #Constructor
         outputFile_Header.write('\t\t~junkClass_' + randomClassName + '();\n') #Destructor
-        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '(const ' + randomClassName + '& oldJunkObj);\n') #Copy Constructor
-        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '( ' + randomClassName + '&& rValue)' + ' : junkCharArr_' + randomClassName + 
-                                '(std::move(rValue.junkCharArr_' + randomClassName + ')), ' + 'junkInt_' + randomClassName + '(std::move(rValue.junkInt_' + randomClassName + '));\n') #Move Constructor
-        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '& operator=(const ' + randomClassName + '& toCopyAssign);\n') #Copy Assignment
-        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '& operator=(' + randomClassName + '&& toMove);\n') #Move Assignment
+        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '(const junkClass_' + randomClassName + '& oldJunkObj);\n') #Copy Constructor
+        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '(junkClass_' + randomClassName + '&& rValue);\n') #Move Constructor
+        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '& operator=(const junkClass_' + randomClassName + ' &toCopyAssign);\n') #Copy Assignment
+        outputFile_Header.write('\t\tjunkClass_' + randomClassName + '& operator=(junkClass_' + randomClassName + '&& toMove);\n') #Move Assignment
         ######################################
         ##Define constructor and destructors##
         ######################################
         #Explicit Constructor
         outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(int ' + explicitRandomConstructorName_Int + ') : junkCharArr_' + 
-                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)\n') 
+                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr) { }\n') 
         outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(float ' + explicitRandomConstructorName_Float + ') : junkCharArr_' + 
-                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)\n') 
+                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr) { };\n') 
         #Constructor
         outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + 'junkClass_' + randomClassName + '(' + classConstructorStr + ') : junkCharArr_' + 
-                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(nullptr)')
+                             randomClassName + '(new char[1024]), junkInt_' + randomClassName + '(new int(' + str(randint(0,9)) +  '))')
         if classVariableListLength != 0:
             outputFile_Cpp.write(', ')
             counter = 1
@@ -495,61 +493,71 @@ def createClass(numClasses):
                 if (counter + 2) < classVariableListLength:
                     outputFile_Cpp.write(', ')  
                 counter += 2
-        outputFile_Cpp.write(' { };\n')    
+        outputFile_Cpp.write(' { }\n')    
         #Destructor
         outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::' + '~junkClass_' + randomClassName + '() {\n\t\tdelete[] junkCharArr_' + randomClassName + '; junkCharArr_' + randomClassName +
                              ' = nullptr;\n\t\tdelete junkInt_' + randomClassName + '; junkInt_' + randomClassName + ' = nullptr;\n\t}\n')
         #Copy Constructor
-        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::junkClass_' + randomClassName + '(const ' + randomClassName + '& oldJunkObj) {\n' +
-                             '\t\tjunkInt_' + randomClassName + ' = new int;\n\t\t*junkInt_' + randomClassName + ' = *oldJunkObj.' + 'junkInt_' + randomClassName + 
-                             ';\n\t\tjunkCharArr_' + randomClassName + ' = new char[1024];\n\t\tstd::copy(' + 'junkCharArr_' + randomClassName + ',  oldJunkObj.junkCharArr_' + 
-                             randomClassName + ');\n')
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::junkClass_' + randomClassName + '(const junkClass_' + randomClassName + '& oldJunkObj) : junkCharArr_' + randomClassName + 
+                             '(new char[1024]), junkInt_' + randomClassName + '(new int(*oldJunkObj.junkInt_' + randomClassName + '))') 
         if classVariableListLength != 0:
             counter = 1
             while counter < classVariableListLength:
-                outputFile_Cpp.write('\t\t' + classVariableList[counter] + ' = oldJunkObj.' + classVariableList[counter] + ';\n')  
+                outputFile_Cpp.write(', ' + classVariableList[counter] + '(oldJunkObj.' + classVariableList[counter] + ')')
                 counter += 2 
-        outputFile_Cpp.write('\t}\n')
+        outputFile_Cpp.write(' {\n' + '\t\t*junkInt_' + randomClassName + ' = *oldJunkObj.junkInt_' + randomClassName + ';\n\t\tjunkCharArr_' + randomClassName + ' = new char[1024];\n\t\tstrcpy(' + 
+                             'junkCharArr_' + randomClassName + ', oldJunkObj.junkCharArr_' + randomClassName + ');\n\t}\n')
         #Move Constructor
-        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::junkClass_' + randomClassName + '(' + randomClassName + '&& rValue)' + ' : junkCharArr_' + randomClassName + 
-                             '(std::move(rValue.junkCharArr_' + randomClassName + ')), ' +
-                             'junkInt_' + randomClassName + '(std::move(rValue.junkInt_' + randomClassName + '))')  
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '::junkClass_' + randomClassName + '(junkClass_' + randomClassName + '&& rValue)' + ' : junkCharArr_' + randomClassName + 
+                             '(rValue.junkCharArr_' + randomClassName + '), ' +
+                             'junkInt_' + randomClassName + '(rValue.junkInt_' + randomClassName + ')')  
         if classVariableListLength != 0:  
             counter = 1
             while counter < classVariableListLength:
-                outputFile_Cpp.write(', ' + classVariableList[counter] + '(std::move(rValue.' + classVariableList[counter] + ')')
+                outputFile_Cpp.write(', ' + classVariableList[counter] + '(rValue.' + classVariableList[counter] + ')')
                 counter += 2
-        outputFile_Cpp.write(' { }\n')
+        outputFile_Cpp.write(' {\n\t\trValue.junkCharArr_' + randomClassName + ' = nullptr;\n\t\trValue.junkInt_' + randomClassName + ' = nullptr;')
+        if classVariableListLength != 0:  
+            counter = 1
+            while counter < classVariableListLength:
+                if classVariableList[counter-1] == 'std::string':
+                    outputFile_Cpp.write('\n\t\trValue.' + classVariableList[counter] + ' = "";')
+                elif classVariableList[counter] == 'float':
+                    outputFile_Cpp.write('\n\t\trValue.' + classVariableList[counter] + ' = 0.f;')
+                elif classVariableList[counter] == 'int':
+                    outputFile_Cpp.write('\n\t\trValue.' + classVariableList[counter] + ' = 0;')
+                counter += 2
+        outputFile_Cpp.write('\n\t}\n')
         #Copy Assignment
-        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '& junkClass_' + randomClassName + '::' + 'operator=(const ' + randomClassName + '& toCopyAssign) {\n' + 
-                             '\t\tstd::swap(junkCharArr_' + randomClassName + ',toCopyAssign.junkCharArr_' + randomClassName + ');\n\t\t' + 'std::swap(junkInt_' + randomClassName + 
-                             ',toCopyAssign.junkInt_' + randomClassName + ');\n')
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '& junkClass_' + randomClassName + '::' + 'operator=(const junkClass_' + randomClassName + '& toCopyAssign) {\n' + 
+                             '\t\tif(this != &toCopyAssign) {\n\t\t\tstd::swap(*junkCharArr_' + randomClassName + ', *toCopyAssign.junkCharArr_' + 
+                             randomClassName + ');\n\t\t\t' + 'std::swap(*junkInt_' + randomClassName + ', *toCopyAssign.junkInt_' + randomClassName + ');\n')
         if classVariableListLength != 0:  
             counter = 1
             while counter < classVariableListLength:
-                outputFile_Cpp.write('\t\tstd::swap(' + classVariableList[counter] + ',toCopyAssign.' + classVariableList[counter] + ');\n')
+                outputFile_Cpp.write('\t\t\t' + classVariableList[counter] + ' = toCopyAssign.' + classVariableList[counter] + ';\n')
                 counter += 2
-        outputFile_Cpp.write('\t\treturn *this;\n\t}\n')  
+        outputFile_Cpp.write('\t\t}\n\t\treturn *this;\n\t}\n')  
         #Move Assignment
-        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '& junkClass_' + randomClassName + '::junkClass_' + randomClassName + '& operator=(' + randomClassName + 
-                             '&& toMove) {\n'+ '\t\tif(this != &toMove) {\n\t\t\tdelete junkCharArr_' + randomClassName + ';\n\t\t\tdelete junkInt_' + randomClassName + 
-                             ';\n\t\t\tjunkCharArr_' + randomClassName + ' = std::move(toMove.junkCharArr_' + randomClassName + ');\n\t\t\tjunkInt_' + randomClassName + 
-                             ' = std::move(toMove.junkInt_' + randomClassName + ');\n')
+        outputFile_Cpp.write('\tjunkClass_' + randomClassName + '& junkClass_' + randomClassName + '::operator=(junkClass_' + randomClassName + 
+                             '&& toMove) {\n'+ '\t\tif(this != &toMove) {\n\t\t\tdelete[] junkCharArr_' + randomClassName + ';\n\t\t\tdelete junkInt_' + randomClassName + 
+                             ';\n\t\t\tjunkCharArr_' + randomClassName + ' = toMove.junkCharArr_' + randomClassName + ';\n\t\t\tjunkInt_' + randomClassName + 
+                             ' = toMove.junkInt_' + randomClassName + ';\n\t\ttoMove.junkCharArr_' + randomClassName +  ' = nullptr;\n\t\ttoMove.junkInt_' + randomClassName + ' = nullptr;\n')
         if classVariableListLength != 0:  
             counter = 1
             while counter < classVariableListLength:
-                outputFile_Cpp.write('\t\t\t' + classVariableList[counter] + ' = std::move(toMove.' + classVariableList[counter] + ');\n')
+                outputFile_Cpp.write('\t\t\t' + classVariableList[counter] + ' = toMove.' + classVariableList[counter] + ';\n')
                 counter += 2
         outputFile_Cpp.write('\t\t}\n\t\treturn *this;\n\t}\n')
-        #####################################################################################
-        ########################Write and define prototype methods###########################
-        #####################################################################################
+        #######################################################################################
+        ######################## Write and define prototype methods ###########################
+        #######################################################################################
         ##################################
         ####Overload Add Operator#########
         ##################################
-        outputFile_Header.write('\t\tfriend junkClass_' + randomClassName + ' operator+(const junkClass_' + randomClassName + '& term_1, const junkClass_' + randomClassName + '& term_2);\n')
-        outputFile_Cpp.write('\tjunkClass_' + randomClassName + ' operator+(const ' + randomClassName + '& term_1, const ' + randomClassName + '& term_2) {\n\t\tjunkClass_' + randomClassName + 
-                             ' result = term_1;\n\t\tresult.junkInt_' + randomClassName + ' = term_1.junkInt_' + randomClassName + ' + term_2.junkInt_' + randomClassName + ';\n\t\treturn result;\n\t}\n')
+        outputFile_Header.write('\t\tfriend int operator+(const junkClass_' + randomClassName + '& term_1, const junkClass_' + randomClassName + '& term_2);\n')
+        outputFile_Cpp.write('\tint operator+(const junkClass_' + randomClassName + '& term_1, const junkClass_' + randomClassName + '& term_2) {\n\t\treturn *term_1.junkInt_' + 
+                             randomClassName + ' + *term_2.junkInt_' + randomClassName + ';\n\t}\n')
         ####################################
         ###### Accessors and setters #######
         ####################################  
@@ -560,9 +568,11 @@ def createClass(numClasses):
         ########Class Methods#################
         ######################################
         defineClassMethod(randomClassName, numClassMethod)
+        outputFile_Header.write('\t\tint getJunkInt();\n')
+        outputFile_Cpp.write('\tint junkClass_' + randomClassName + '::getJunkInt() {\n\t\treturn *junkInt_' + randomClassName + ';\n\t}\n')
 
         outputFile_Header.write("\t};\n}\n")
-        outputFile_Cpp.write("}\n")
+        outputFile_Cpp.write("};\n")
 
         createClass(numClasses-1)  
 
@@ -591,7 +601,7 @@ outputFile_Cpp.write("namespace junkNamespace_" + junkFunctionNamspace_Name + " 
 createFunction(numFunction)
 
 outputFile_Header.write("}\n\n#endif")
-outputFile_Cpp.write("}")
+outputFile_Cpp.write("};")
 
 outputFile_Header.close()   
 outputFile_Cpp.close()
