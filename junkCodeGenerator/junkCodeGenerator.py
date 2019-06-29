@@ -1,7 +1,7 @@
-from random2 import randint
-from random2 import seed
-from random2 import random
-from random2 import choice
+from random1 import randint
+from random1 import seed
+from random1 import random
+from random1 import choice
 from textwrap import indent
 import string
 import sys
